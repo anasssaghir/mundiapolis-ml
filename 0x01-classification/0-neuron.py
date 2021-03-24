@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-''' la classe des neurones '''
+'''  la classe des neurones  '''
 
 import numpy as np
 
