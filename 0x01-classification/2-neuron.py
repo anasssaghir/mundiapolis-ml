@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
+'''Module contenant la classe neurone
+ '''
 
-"""
-Module contenant la classe neurone
-"""
 import numpy as np
 
 class Neuron:
-    """
-    la classe qui définit un neurone
-    """
-
+    '''Classe qui définit le neurone
+    '''
+    
     def __init__(self, nx):
         """
         constructeur de la classe
