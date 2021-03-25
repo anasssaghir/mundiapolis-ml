@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Module contenant la classe neurone
+ Module contenant la classe neurone
 """
 import numpy as np
 
-
+ 
 class Neuron:
     """
     la classe qui définit un neurone
