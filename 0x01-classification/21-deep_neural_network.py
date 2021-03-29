@@ -37,7 +37,7 @@ class DeepNeuralNetwork:
 
     def forward_prop(self, X):
         """
-        calcule la propagation directe du réseau neuronal
+        calcule la propagation directe
         """
         self.__cache['A0'] = X
         for i in range(self.__L):
@@ -62,7 +62,7 @@ class DeepNeuralNetwork:
 
     def evaluate(self, X, Y):
         """
-        Fonction évalue la prédiction du réseau neuronal profond
+        Fonction évalue la prédiction du réseau neuronam
         """
         A, _ = self.forward_prop(X)
         prediction = np.where(A >= 0.5, 1, 0)
@@ -71,7 +71,7 @@ class DeepNeuralNetwork:
 
     def gradient_descent(self, Y, cache, alpha=0.05):
         """
-        calcule une passe de descente de gradient sur le neurone
+        calcule de descente de gradient
         """
         m = Y.shape[1]
         for i in reversed(range(self.__L)):
