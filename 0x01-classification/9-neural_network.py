@@ -7,7 +7,7 @@ import numpy as np
 
 class NeuralNetwork:
     """
-    Une classe qui définit un réseau de neurones avec une couche cachée effectuant une classification binaire
+    classification binaire
     """
 
     def __init__(self, nx, nodes):
