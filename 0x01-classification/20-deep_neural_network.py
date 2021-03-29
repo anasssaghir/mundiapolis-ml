@@ -7,14 +7,12 @@ import numpy as np
 
 class DeepNeuralNetwork:
     """
-    Une classe qui définit un réseau neuronal profond avec une couche cachée effectuant une classification binaire
+    classification binaire
     """
 
     def __init__(self, nx, layers):
         """
         constructeur de classe
-         paramètre nx: est le nombre d'entités d'entrée du neurone
-         paramètre layers: une liste représentant le nombre de nœuds dans chaque couche
         """
         if type(nx) is not int:
             raise TypeError("nx must be an integer")
@@ -71,9 +69,6 @@ class DeepNeuralNetwork:
     def evaluate(self, X, Y):
         """
         Fonction évalue la prédiction du réseau neuronal profond
-         paramètre X: tableau np avec des données d'entrée de forme (nx, m)
-         paramètre Y: tableau np avec étiquette de forme correcte (1, m)
-         elle retourne : prédiction des neurones et coût du réseau
         """
         A, _ = self.forward_prop(X)
         prediction = np.where(A >= 0.5, 1, 0)
