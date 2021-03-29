@@ -2,7 +2,6 @@
 '''One hot encode'''
 import numpy as np
 
-
 def one_hot_decode(one_hot):
     '''converter a one-hot matrix
     into a vector of labels'''
