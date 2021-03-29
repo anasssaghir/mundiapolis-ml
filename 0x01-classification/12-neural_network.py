@@ -7,7 +7,7 @@ import numpy as np
 
 class NeuralNetwork:
     """
-    Une classe qui définit un réseau de neurones avec une couche cachée effectuant une classification binaire
+    une classification binaire
     """
 
     def __init__(self, nx, nodes):
@@ -36,7 +36,6 @@ class NeuralNetwork:
     def forward_prop(self, X):
         """
         Le calcule de la propagation directe du réseau de neurones
-         Le paramètre X: tableau np avec les données d'entrée de forme (nx, m)
          elle retourne : les attributs privés __A1 et __A2
         """
         z1 = np.matmul(self.__W1, X) + self.__b1
