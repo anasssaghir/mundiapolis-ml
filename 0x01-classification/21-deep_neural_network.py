@@ -4,7 +4,6 @@ Module contenant la classe neurone
 """
 import numpy as np
 
-
 class DeepNeuralNetwork:
     """
     classification binaire
@@ -21,11 +20,8 @@ class DeepNeuralNetwork:
         self.nx = nx
         if type(layers) is not list or len(layers) == 0:
             raise TypeError("layers must be a list of positive integers")
-        # L : est le nombre de couches dans le réseau neuronal
         self.__L = len(layers)
-        # cache : est un dictionnaire pour contenir toutes les valeurs intermédiaires du réseau
         self.__cache = {}
-        # weights : est un dictionnaire pour tenir tous les poids et biais du réseau
         weights = {}
         for i in range(len(layers)):
             if layers[i] < 1:
@@ -42,7 +38,7 @@ class DeepNeuralNetwork:
 
     def forward_prop(self, X):
         """
-        calcule la propagation directe du réseau neuronal profond
+        calcule la propagation directe du réseau neuronal
         """
         # Input layer
         self.__cache['A0'] = X
@@ -62,7 +58,7 @@ class DeepNeuralNetwork:
 
     def cost(self, Y, A):
         """
-        calcule le coût du modèle à l'aide de la régression logistique
+        calcule le coût à l'aide de la régression logistique
         """
         cost = Y * np.log(A) + (1 - Y) * np.log(1.0000001 - A)
         cost = np.sum(cost)
