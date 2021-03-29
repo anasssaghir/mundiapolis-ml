@@ -8,7 +8,6 @@ class NeuralNetwork:
     """
     classification binaire
     """
-
     def __init__(self, nx, nodes):
         """
         constructeur de la classe
@@ -34,7 +33,6 @@ class NeuralNetwork:
     def forward_prop(self, X):
         """
         Le calcule de la propagation directe du réseau de neurones
-        retourne : les attributs privés __A1 et __A2
         """
         z1 = np.matmul(self.__W1, X) + self.__b1
         self.__A1 = 1 / (1 + np.exp(-z1))
@@ -45,7 +43,6 @@ class NeuralNetwork:
     def cost(self, Y, A):
         """
         calcule le coût du modèle à l'aide de la régression logistique
-        retourne : le coût
         """
         cost = Y * np.log(A) + (1 - Y) * np.log(1.0000001 - A)
         cost = np.sum(cost)
@@ -55,7 +52,6 @@ class NeuralNetwork:
     def evaluate(self, X, Y):
         """
         évalue la prédiction du réseau neuronal
-        retourne: prédiction des neurones et coût du réseau
         """
         self.forward_prop(X)
         prediction = np.where(self.__A2 >= 0.5, 1, 0)
