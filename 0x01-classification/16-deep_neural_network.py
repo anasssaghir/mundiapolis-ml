@@ -9,7 +9,6 @@ class DeepNeuralNetwork:
     """
     la classe 
     """
-
     def __init__(self, nx, layers):
         """
         constructeur
