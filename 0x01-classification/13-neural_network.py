@@ -7,13 +7,12 @@ import numpy as np
 
 class NeuralNetwork:
     """
-    Une classe qui définit un réseau de neurones avec une couche cachée effectuant une classification binaire
+    classification binaire
     """
 
     def __init__(self, nx, nodes):
         """
         constructeur de la classe
-        la variable nx: est le nombre d'entités d'entrée du neurone
         """
         if type(nx) is not int:
             raise TypeError("nx must be an integer")
@@ -36,8 +35,6 @@ class NeuralNetwork:
     def forward_prop(self, X):
         """
         Le calcule de la propagation directe du réseau de neurones
-         Le paramètre X: tableau np avec les données d'entrée de forme (nx, m)
-         elle retourne : les attributs privés __A1 et __A2
         """
         z1 = np.matmul(self.__W1, X) + self.__b1
         self.__A1 = 1 / (1 + np.exp(-z1))
@@ -48,9 +45,6 @@ class NeuralNetwork:
     def cost(self, Y, A):
         """
         calcule le coût du modèle à l'aide de la régression logistique
-         Le paramètre Y: un tableau np avec des étiquettes de forme correctes (1, m)
-         Le paramètre A: un tableau np avec la sortie activée de shape (1, m)
-         elle retourne : le coût
         """
         cost = Y * np.log(A) + (1 - Y) * np.log(1.0000001 - A)
         cost = np.sum(cost)
@@ -60,9 +54,6 @@ class NeuralNetwork:
     def evaluate(self, X, Y):
         """
         évalue la prédiction du réseau neuronal
-         Le paramètre X: tableau np avec des données d'entrée de forme (nx, m)
-         Le paramètre Y: tableau np avec étiquette de forme correcte (1, m)
-         elle retourne: prédiction des neurones et coût du réseau
         """
         self.forward_prop(X)
         prediction = np.where(self.__A2 >= 0.5, 1, 0)
@@ -72,12 +63,6 @@ class NeuralNetwork:
     def gradient_descent(self, X, Y, A1, A2, alpha=0.05):
         """
         Le calcule une passe de descente de gradient sur le neurone
-         Le paramètre X: tableau np avec des données d'entrée de forme (nx, m)
-         Le paramètre Y: tableau np avec des étiquettes correctes de forme (1, m)
-         Le paramètre A1: tableau np avec sortie de couche cachée activée de forme (1, m)
-         Le paramètre A2: tableau np avec sortie activée de la forme (1, m)
-         Le paramètre alpha: le taux d'apprentissage
-         elle ne retourne rien
         """
         # gradient descent for hidden layer
         dz2 = A2 - Y
