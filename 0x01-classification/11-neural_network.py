@@ -7,7 +7,7 @@ import numpy as np
 
 class NeuralNetwork:
     """
-    Une classe qui définit un réseau de neurones avec une couche cachée effectuant une classification binaire
+    une classification binaire
     """
 
     def __init__(self, nx, nodes):
@@ -48,8 +48,6 @@ class NeuralNetwork:
     def cost(self, Y, A):
         """
         calcule le coût du modèle à l'aide de la régression logistique
-         Le paramètre Y: un tableau np avec des étiquettes de forme correctes (1, m)
-         Le paramètre A: un tableau np avec la sortie activée de shape (1, m)
          elle retourne : le coût
         """
         cost = Y * np.log(A) + (1 - Y) * np.log(1.0000001 - A)
