@@ -7,14 +7,12 @@ import numpy as np
 
 class DeepNeuralNetwork:
     """
-    Une classe qui définit un réseau neuronal profond avec une couche cachée effectuant une classification binaire
+    classification binaire
     """
 
     def __init__(self, nx, layers):
         """
         constructeur de classe
-         paramètre nx: est le nombre d'entités d'entrée du neurone
-         paramètre layers: une liste représentant le nombre de nœuds dans chaque couche
         """
         if type(nx) is not int:
             raise TypeError("nx must be an integer")
@@ -45,9 +43,6 @@ class DeepNeuralNetwork:
     def forward_prop(self, X):
         """
         calcule la propagation directe du réseau neuronal profond
-         Le paramètre X: tableau np avec les données d'entrée de forme (nx, m)
-         elle retourne : la sortie du réseau neuronal profond et du cache,
-         où le cache est la sortie activée de chaque couche
         """
         # Input layer
         self.__cache['A0'] = X
@@ -68,9 +63,6 @@ class DeepNeuralNetwork:
     def cost(self, Y, A):
         """
         calcule le coût du modèle à l'aide de la régression logistique
-         paramètre Y: un tableau np avec des étiquettes de forme correctes (1, m)
-         paramètre A: un tableau np avec la sortie activée de shape (1, m)
-         elle retourne : le coût
         """
         cost = Y * np.log(A) + (1 - Y) * np.log(1.0000001 - A)
         cost = np.sum(cost)
@@ -80,9 +72,6 @@ class DeepNeuralNetwork:
     def evaluate(self, X, Y):
         """
         Fonction évalue la prédiction du réseau neuronal profond
-         paramètre X: tableau np avec des données d'entrée de forme (nx, m)
-         paramètre Y: tableau np avec étiquette de forme correcte (1, m)
-         elle retourne : prédiction des neurones et coût du réseau
         """
         A, _ = self.forward_prop(X)
         prediction = np.where(A >= 0.5, 1, 0)
@@ -92,11 +81,6 @@ class DeepNeuralNetwork:
     def gradient_descent(self, Y, cache, alpha=0.05):
         """
         calcule une passe de descente de gradient sur le neurone
-         Le paramètre Y: tableau np avec des étiquettes correctes de forme (1, m)
-         Le paramètre cache: dictionnaire contenant toutes les valeurs intermédiaires du
-         réseau
-         Le paramètre alpha: le taux d'apprentissage
-         elle ne retourne rien 
         """
         m = Y.shape[1]
         for i in reversed(range(self.__L)):
