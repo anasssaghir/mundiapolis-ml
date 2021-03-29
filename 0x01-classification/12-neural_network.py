@@ -4,10 +4,9 @@ Module contenant la classe neurone
 """
 import numpy as np
 
-
 class NeuralNetwork:
     """
-    une classification binaire
+    classification binaire
     """
 
     def __init__(self, nx, nodes):
@@ -47,8 +46,6 @@ class NeuralNetwork:
     def cost(self, Y, A):
         """
         calcule le coût du modèle à l'aide de la régression logistique
-         Le paramètre Y: un tableau np avec des étiquettes de forme correctes (1, m)
-         Le paramètre A: un tableau np avec la sortie activée de shape (1, m)
          elle retourne : le coût
         """
         cost = Y * np.log(A) + (1 - Y) * np.log(1.0000001 - A)
@@ -59,8 +56,6 @@ class NeuralNetwork:
     def evaluate(self, X, Y):
         """
         évalue la prédiction du réseau neuronal
-         Le paramètre X: tableau np avec des données d'entrée de forme (nx, m)
-         Le paramètre Y: tableau np avec étiquette de forme correcte (1, m)
          elle retourne: prédiction des neurones et coût du réseau
         """
         self.forward_prop(X)
