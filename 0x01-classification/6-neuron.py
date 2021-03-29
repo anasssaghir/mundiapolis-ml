@@ -27,7 +27,6 @@ class Neuron:
     def forward_prop(self, X):
         """
         elle calcule la propagation avant du neurone
-         Le paramètre X: un tableau np avec les données d'entrée de forme (nx, m)
          elle retourne : attribut privé __A
         """
         preactivation = np.matmul(self.__W, X) + self.__b
@@ -37,8 +36,6 @@ class Neuron:
     def cost(self, Y, A):
         """
         calcule le coût du modèle à l'aide de la régression logistique
-         Le paramètre Y: un tableau np avec des étiquettes de forme correctes (1, m)
-         Le paramètre A: un tableau np avec la sortie activée de shape (1, m)
          elle retourne : le coût
         """
         cost = Y * np.log(A) + (1 - Y) * np.log(1.0000001 - A)
@@ -61,9 +58,6 @@ class Neuron:
     def gradient_descent(self, X, Y, A, alpha=0.05):
         """
         calcule une passe de descente de gradient sur le neurone
-         Le paramètre X: tableau np avec des données d'entrée de forme (nx, m)
-         Le paramètre Y: tableau np avec des étiquettes correctes de forme (1, m)
-         Le paramètre A: tableau np avec sortie activée de la forme (1, m)
          Le paramètre alpha: le taux d'apprentissage
          elle ne retourne rien
         """
