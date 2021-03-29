@@ -32,7 +32,6 @@ class Neuron:
     @property
     def b(self):
         '''calcule de la propagation avant du neurone
-            var X: un tableau np avec la forme (nx, m) qui contient les données d'entrées
             retourne: attribut privé __A
         '''
 
