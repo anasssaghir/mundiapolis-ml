@@ -20,11 +20,8 @@ class DeepNeuralNetwork:
         self.nx = nx
         if type(layers) is not list or len(layers) == 0:
             raise TypeError("layers must be a list of positive integers")
-        # L
         self.L = len(layers)
-        # cache
         self.cache = {}
-        # weights
         weights = {}
         for i in range(len(layers)):
             if layers[i] < 1:
