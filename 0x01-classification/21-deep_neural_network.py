@@ -109,7 +109,6 @@ class DeepNeuralNetwork:
     def cache(self):
         """
         fonction getter pour le cache
-        elle retourne : cache
         """
         return self.__cache
 
@@ -117,7 +116,6 @@ class DeepNeuralNetwork:
     def L(self):
         """
         fonction getter pour L (nombre de couches)
-         elle retourne : L
         """
         return self.__L
 
@@ -125,6 +123,5 @@ class DeepNeuralNetwork:
     def weights(self):
         """
         fonction getter pour weights
-        elle retourne : weights
         """
         return self.__weights
