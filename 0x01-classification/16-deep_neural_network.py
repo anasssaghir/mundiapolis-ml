@@ -4,10 +4,9 @@ Module contenant la classe neurone
 """
 import numpy as np
 
-
 class DeepNeuralNetwork:
     """
-    la classe 
+    la classe
     """
     def __init__(self, nx, layers):
         """
