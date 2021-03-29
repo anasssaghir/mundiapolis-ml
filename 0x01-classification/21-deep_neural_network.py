@@ -8,7 +8,6 @@ class DeepNeuralNetwork:
     """
     classification binaire
     """
-
     def __init__(self, nx, layers):
         """
         constructeur de classe
@@ -40,16 +39,12 @@ class DeepNeuralNetwork:
         """
         calcule la propagation directe du réseau neuronal
         """
-        # Input layer
         self.__cache['A0'] = X
-        # Hidden and output layer
         for i in range(self.__L):
-            # create keys to access weights(W), biases(b) and store in cache
             key_w = 'W' + str(i + 1)
             key_b = 'b' + str(i + 1)
             key_cache = 'A' + str(i + 1)
             key_cache_last = 'A' + str(i)
-            # store activation in cache
             output_Z = np.matmul(self.__weights[key_w], self.__cache[
                 key_cache_last]) + self.__weights[key_b]
             output_A = 1 / (1 + np.exp(-output_Z))
@@ -80,12 +75,10 @@ class DeepNeuralNetwork:
         """
         m = Y.shape[1]
         for i in reversed(range(self.__L)):
-            # create keys to access weights(W), biases(b) and store in cache
             key_w = 'W' + str(i + 1)
             key_b = 'b' + str(i + 1)
             key_cache = 'A' + str(i + 1)
             key_cache_dw = 'A' + str(i)
-            # Activation
             A = cache[key_cache]
             A_dw = cache[key_cache_dw]
             if i == self.__L - 1:
@@ -111,7 +104,7 @@ class DeepNeuralNetwork:
     @property
     def L(self):
         """
-        fonction getter pour L (nombre de couches)
+        fonction getter pour L
         """
         return self.__L
 
