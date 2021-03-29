@@ -33,7 +33,7 @@ class Neuron:
     def b(self):
         '''calcule de la propagation avant du neurone
             la variable X: un tableau np avec la forme (nx, m) qui contient les données d'entrées
-            elle retourne: attribut privé __A
+            retourne: attribut privé __A
         '''
 
         return self.__b
@@ -41,14 +41,14 @@ class Neuron:
     @property
     def A(self):
         '''fonction getter pour W
-            elle retourne: vecteur de poids du neurone
+            retourne: vecteur de poids du neurone
         '''
 
         return self.__A
 
     def forward_prop(self, X):
         '''fonction getter pour b
-            elle retourne: biais pour le neurone
+            retourne: biais pour le neurone
         '''
 
         x = np.matmul(self.__W, X) + self.__b
