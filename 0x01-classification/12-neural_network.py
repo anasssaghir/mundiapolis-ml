@@ -12,7 +12,6 @@ class NeuralNetwork:
     def __init__(self, nx, nodes):
         """
         constructeur de la classe
-        la variable nx: est le nombre d'entités d'entrée du neurone
         """
         if type(nx) is not int:
             raise TypeError("nx must be an integer")
@@ -35,7 +34,7 @@ class NeuralNetwork:
     def forward_prop(self, X):
         """
         Le calcule de la propagation directe du réseau de neurones
-         elle retourne : les attributs privés __A1 et __A2
+        retourne : les attributs privés __A1 et __A2
         """
         z1 = np.matmul(self.__W1, X) + self.__b1
         self.__A1 = 1 / (1 + np.exp(-z1))
@@ -46,7 +45,7 @@ class NeuralNetwork:
     def cost(self, Y, A):
         """
         calcule le coût du modèle à l'aide de la régression logistique
-         elle retourne : le coût
+        retourne : le coût
         """
         cost = Y * np.log(A) + (1 - Y) * np.log(1.0000001 - A)
         cost = np.sum(cost)
@@ -56,7 +55,7 @@ class NeuralNetwork:
     def evaluate(self, X, Y):
         """
         évalue la prédiction du réseau neuronal
-         elle retourne: prédiction des neurones et coût du réseau
+        retourne: prédiction des neurones et coût du réseau
         """
         self.forward_prop(X)
         prediction = np.where(self.__A2 >= 0.5, 1, 0)
