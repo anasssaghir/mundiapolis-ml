@@ -8,7 +8,6 @@ class DeepNeuralNetwork:
     """
     constructeur 
     """
-
     def __init__(self, nx, layers):
         """
         constructeur de classe
@@ -37,4 +36,4 @@ class DeepNeuralNetwork:
                 weights[key_w] = np.random.randn(layers[i], layers[
                     i-1]) * np.sqrt(2 / layers[i-1])
             weights[key_b] = np.zeros((layers[i], 1))
-        self.weights = weights 
+        self.weights = weights
