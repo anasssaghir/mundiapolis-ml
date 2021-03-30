@@ -12,7 +12,6 @@ class DeepNeuralNetwork:
     def __init__(self, nx, layers):
         """
         constructeur de classe
-         paramètre nx: est le nombre d'entités d'entrée du neurone
         """
         if type(nx) is not int:
             raise TypeError("nx must be an integer")
@@ -21,7 +20,7 @@ class DeepNeuralNetwork:
         self.nx = nx
         if type(layers) is not list or len(layers) == 0:
             raise TypeError("layers must be a list of positive integers")
-        # L : est le nombre de couches dans le réseau neuronal
+        # L
         self.L = len(layers)
         # cache
         self.cache = {}
