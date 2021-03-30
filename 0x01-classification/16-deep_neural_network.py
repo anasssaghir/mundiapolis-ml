@@ -7,7 +7,7 @@ import numpy as np
 
 class DeepNeuralNetwork:
     """
-    constructeur de la classe 
+    constructeur 
     la variable nx: est le nombre d'entités d'entrée du neurone
     """
 
@@ -15,7 +15,6 @@ class DeepNeuralNetwork:
         """
         constructeur de classe
          paramètre nx: est le nombre d'entités d'entrée du neurone
-         paramètre layers: une liste représentant le nombre de nœuds dans chaque couche
         """
         if type(nx) is not int:
             raise TypeError("nx must be an integer")
@@ -26,9 +25,9 @@ class DeepNeuralNetwork:
             raise TypeError("layers must be a list of positive integers")
         # L : est le nombre de couches dans le réseau neuronal
         self.L = len(layers)
-        # cache : est un dictionnaire pour contenir toutes les valeurs intermédiaires du réseau
+        # cache
         self.cache = {}
-        # weights : est un dictionnaire pour tenir tous les poids et biais du réseau
+        # weights
         weights = {}
         for i in range(len(layers)):
             if layers[i] < 1:
@@ -41,4 +40,4 @@ class DeepNeuralNetwork:
                 weights[key_w] = np.random.randn(layers[i], layers[
                     i-1]) * np.sqrt(2 / layers[i-1])
             weights[key_b] = np.zeros((layers[i], 1))
-        self.weights = weights
+        self.weights = weights 
