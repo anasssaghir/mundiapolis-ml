@@ -4,11 +4,9 @@ Module contenant la classe neurone
 """
 import numpy as np
 
-
 class DeepNeuralNetwork:
     """
     constructeur 
-    la variable nx: est le nombre d'entités d'entrée du neurone
     """
 
     def __init__(self, nx, layers):
