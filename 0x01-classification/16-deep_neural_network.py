@@ -4,7 +4,6 @@ Module contenant la classe neurone
 """
 import numpy as np
 
-
 class DeepNeuralNetwork:
     """
     la classe DeepNeuralNetwork 
