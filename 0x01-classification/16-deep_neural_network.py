@@ -6,7 +6,7 @@ import numpy as np
 
 class DeepNeuralNetwork:
     """
-    constructeur 
+    classe DeepNeuralNetwork
     """
     def __init__(self, nx, layers):
         """
