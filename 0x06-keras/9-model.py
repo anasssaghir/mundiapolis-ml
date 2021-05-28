@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-import tensorflow.keras as K
 """
 Saves and load Model for Keras
 """
+import tensorflow.keras as K
+
+
 def save_model(network, filename):
     """
     saves an entire model
@@ -10,7 +12,7 @@ def save_model(network, filename):
     :param filename: is the path of the file that the model should be saved to
     :return: None
     """
-    K.models.save_model(model=network,filepath=filename)
+    K.models.save_model(model=network, filepath=filename)
     return None
 
 
